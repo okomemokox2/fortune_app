@@ -1,0 +1,53 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<style>
+    .card-container {
+        max-width: 20rem;
+        margin: auto;
+        text-align: center;
+        padding: 2rem;
+        background-color: #F8F9FA;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+css
+Copy code
+.card-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.card-container .card-image {
+    display: none; /* 画像は非表示にする */
+}
+
+.card-container p {
+    color: #666;
+}
+
+.btn-primary {
+    background-color: #F44336;
+    border-color: #F44336;
+    margin-top: 1rem;
+}
+
+.btn-primary:hover {
+    background-color: #E53935;
+    border-color: #E53935;
+}
+</style>
+<div class="card-container">
+    <h1>引いたカードは...</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            <!-- 画像は非表示なのでコメントアウト -->
+            <!-- <img src="{{ card.image.url }}" alt="{{ card.name }}" class="card-image img-fluid"> -->
+            <p class="card-name">{{ selected_card }}</p>
+            <p class="card-description">{{ selected_description }}</p>
+        </div>
+    </div>
+    <a href="{% url 'tarot' %}" class="btn btn-primary">もう一度シャッフルする</a>
+</div>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>

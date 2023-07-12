@@ -1,0 +1,56 @@
+<div class="container">
+    <h1 class="display-4">このサイトについて</h1>
+    <h2>このサイトは、練習用に作成しました。私がDjangoを使用して初めて作ったサイトです。</h2>
+    <div class="card mt-4">
+        <div class="card-body">
+            <h5 class="card-title">使用した言語・技術</h5>
+            <ul>
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>Django</li>
+                <li>SQLite</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card mt-4">
+        <div class="card-body">
+            <h5 class="card-title">工夫した点</h5>
+            <ul>
+                <li>名前を入力しない場合、"ゲストさん"と出力されるようにしました。</li>
+                <li>日付によって結果が変わるようにしました。</li>
+                <li>星座占い、干支占いができる形にしました。</li>
+            </ul>
+        </div>
+    </div>
+    <a href="{% url 'home' %}" class="btn btn-secondary btn-back">ホームに戻る</a>
+</div>
+
+<style>
+.container {
+    margin-top: 2rem;
+}
+
+.card {
+    margin-top: 2rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+</style>

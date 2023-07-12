@@ -1,0 +1,44 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<style>
+    .form-container {
+        max-width: 20rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+    }
+
+    .form-container h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .form-container .form-input {
+        max-width: 10rem;
+    }
+
+    .btn-back {
+        margin-top: 1rem;
+    }
+</style>
+<div class="form-container">
+    <h1>♰整数占い♰</h1>
+    <form method="POST" action="{% url 'fortune_telling_int' %}" class="form">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="number" class="form-label">好きな整数を入力してください:</label>
+            <input type="number" name="number" id="number" class="form-control form-input" required>
+        </div>
+        <div class="mb-3">
+            <label for="onamae" class="form-label">名前を入力してください(無記入可)</label>
+            <input type="text" name="onamae" id="onamae" class="form-control form-input">
+        </div>
+        <button type="submit" class="btn btn-primary">占う</button>
+    </form>
+    <a href="{% url 'home' %}" class="btn btn-secondary btn-back">ホームに戻る</a>
+</div>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>

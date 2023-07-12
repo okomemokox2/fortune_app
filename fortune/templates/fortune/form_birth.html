@@ -1,0 +1,66 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<style>
+    .form-container {
+        max-width: 20rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+    }
+
+    .form-container h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .form-container .form-select {
+        max-width: 8rem;
+    }
+
+    .form-container .year-select {
+        max-width: 10rem;
+    }
+</style>
+<div class="form-container">
+    <h1>♰生年月日占い♰</h1>
+    <form method="POST" action="{% url 'fortune_telling' %}" class="form">
+        {% csrf_token %}
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-3">
+                <label for="year" class="form-label">年:</label>
+                <select name="year" id="year" class="form-select year-select">
+                    {% for year in years %}
+                        <option value="{{ year }}">{{ year }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="month" class="form-label">月:</label>
+                <select name="month" id="month" class="form-select">
+                    {% for month in months %}
+                        <option value="{{ month }}">{{ month }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="day" class="form-label">日:</label>
+                <select name="day" id="day" class="form-select">
+                    {% for day in days %}
+                        <option value="{{ day }}">{{ day }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="onamae" class="form-label">名前を入力してください:</label>
+            <input type="text" name="onamae" id="onamae" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">占う</button>
+    </form>
+    <a href="{% url 'home' %}" class="btn btn-secondary btn-back">ホームに戻る</a>
+</div>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>

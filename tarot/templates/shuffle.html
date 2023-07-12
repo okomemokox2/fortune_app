@@ -1,0 +1,36 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<style>
+    .card-container {
+        max-width: 20rem;
+        margin: auto;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .card-container h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .card-container .card-image {
+        margin-bottom: 1.5rem;
+    }
+</style>
+
+<div class="card-container">
+    <h1>♰TarotCard占い♰</h1>
+    <p>２２枚の大アルカナカードから一枚を選出します。</p>
+    <div class="row justify-content-center">
+        {% for card in cards %}
+            <div class="col-md-4 mb-3">
+                <img src="{{ card.image.url }}" alt="{{ card.name }}" class="card-image img-fluid">
+                <p>{{ card.name }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <a href="{% url 'tarot_result' %}" class="btn btn-primary">カードを引く</a>
+    <a href="{% url 'home' %}" class="btn btn-secondary">ホームに戻る</a>
+</div>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
