@@ -123,8 +123,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    '/fortune,
-    '/tarot,
+    '/fortune',
+    '/tarot',
 ]
 
 # Default primary key field type
