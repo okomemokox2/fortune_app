@@ -1,1 +1,1 @@
-"web: gunicorn djangoCalendarApp.wsgi --log-file -" 
+web: gunicorn fortune_app.wsgi --log-file -
