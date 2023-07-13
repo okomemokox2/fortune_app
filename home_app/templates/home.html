@@ -39,11 +39,23 @@
     .links .btn {
         margin-right: 1rem;
     }
+
+    .moon-image {
+        margin-top: 2rem;
+    }
 </style>
 
 <div class="container">
     <h1 class="display-4">♰占いアプリ♰</h1>
     <p class="lead">己の運勢を占ってみましょう。</p>
+    
+    <!-- 今夜の月の画像を表示 -->
+    {% if moon_image_url %}
+    <img src="{{ moon_image_url }}" alt="Tonight's Moon">
+    {% else %}
+    <p>今夜の月の画像を取得できませんでした。</p>
+    {% endif %}
+
     <div class="row justify-content-center">
         <div class="col-md-4 mb-3">
             <a href="{% url 'fortune_telling' %}" class="btn btn-primary btn-lg btn-block">生年月日占い</a>
