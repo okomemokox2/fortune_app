@@ -122,8 +122,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'fortune', 'static'),
-    os.path.join(BASE_DIR, 'tarot', 'static'),
+    os.path.join(BASE_DIR, 'staticfiles'),
 ]
 
 
