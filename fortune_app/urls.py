@@ -24,6 +24,6 @@ urlpatterns = [
     path('fortune/', include('fortune.urls')),
     path('', include('home_app.urls')),
     path('tarot/', include('tarot.urls')),
-    path('accounts/', include(('accounts.urls', 'accounts'), namespace='accounts')),
+    path('accounts/', include('accounts.urls')),
 ]
 
