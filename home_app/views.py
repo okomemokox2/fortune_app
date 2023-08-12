@@ -1,4 +1,4 @@
-from .utils import get_moon_image
+#from .utils import get_moon_image
 from django.shortcuts import render
 import requests
 # Create your views here.

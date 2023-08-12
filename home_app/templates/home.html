@@ -48,13 +48,6 @@
 <div class="container">
     <h1 class="display-4">♰占いアプリ♰</h1>
     <p class="lead">己の運勢を占ってみましょう。</p>
-    
-    <!-- 今夜の月の画像を表示 -->
-    {% if moon_image_url %}
-    <img src="{{ moon_image_url }}" alt="Tonight's Moon">
-    {% else %}
-    <p>今夜の月の画像を取得できませんでした。</p>
-    {% endif %}
 
     <div class="row justify-content-center">
         <div class="col-md-4 mb-3">
@@ -68,7 +61,7 @@
         </div>
     </div>
     <div class="links">
-        <a href="{% url 'accounts:signup' %}" class="btn btn-secondary">アカウント作成(現在停止中)</a>
+        <a href="{% url 'accounts:signup' %}" class="btn btn-secondary">アカウント作成(DB現在停止中、登録不可)</a>
         <a href="{% url 'about' %}" class="btn btn-secondary">このサイトについて</a>
     </div>
 </div>
