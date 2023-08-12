@@ -1,6 +1,6 @@
 #from .utils import get_moon_image
 from django.shortcuts import render
-import requests
+#import requests
 # Create your views here.
 def about(request):
    return render(request, 'about.html') 

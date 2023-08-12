@@ -29,6 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'vast-eyrie-49348-2225d2408924.herokuapp.com',
+    'tobinagafortune-0596029bf55b.herokuapp.com'
     'localhost', '127.0.0.1',
 ]
 
